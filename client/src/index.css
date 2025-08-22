@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 10.2%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(0, 0%, 0%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(218, 86%, 37%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 10.2%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 9.4%);
+  --muted-foreground: hsl(0, 0%, 63.9%);
+  --accent: hsl(218, 86%, 37%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 20%);
+  --input: hsl(0, 0%, 20%);
+  --ring: hsl(218, 86%, 37%);
+  --chart-1: hsl(218, 86%, 37%);
+  --chart-2: hsl(159.8, 100%, 36.1%);
+  --chart-3: hsl(42.0, 92.8%, 56.3%);
+  --chart-4: hsl(147.1, 78.5%, 41.9%);
+  --chart-5: hsl(341.5, 75.2%, 51%);
+  --sidebar: hsl(0, 0%, 10.2%);
+  --sidebar-foreground: hsl(0, 0%, 100%);
+  --sidebar-primary: hsl(218, 86%, 37%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(0, 0%, 20%);
+  --sidebar-accent-foreground: hsl(0, 0%, 100%);
+  --sidebar-border: hsl(0, 0%, 20%);
+  --sidebar-ring: hsl(218, 86%, 37%);
+  --font-sans: 'Roboto', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+  
+  /* Samsung color scheme */
+  --samsung-blue: hsl(218, 86%, 37%);
+  --accent-orange: hsl(24, 100%, 70%);
+  --card-bg: hsl(0, 0%, 10.2%);
+  --success-green: hsl(142, 100%, 39%);
+  
+  /* Focus ring for TV navigation */
+  --focus-ring: 4px solid hsl(24, 100%, 70%);
+}
+
+.dark {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 10.2%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(0, 0%, 0%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(218, 86%, 37%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 10.2%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 9.4%);
+  --muted-foreground: hsl(0, 0%, 63.9%);
+  --accent: hsl(218, 86%, 37%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 20%);
+  --input: hsl(0, 0%, 20%);
+  --ring: hsl(218, 86%, 37%);
+  --chart-1: hsl(218, 86%, 37%);
+  --chart-2: hsl(159.8, 100%, 36.1%);
+  --chart-3: hsl(42.0, 92.8%, 56.3%);
+  --chart-4: hsl(147.1, 78.5%, 41.9%);
+  --chart-5: hsl(341.5, 75.2%, 51%);
+  --sidebar: hsl(0, 0%, 10.2%);
+  --sidebar-foreground: hsl(0, 0%, 100%);
+  --sidebar-primary: hsl(218, 86%, 37%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(0, 0%, 20%);
+  --sidebar-accent-foreground: hsl(0, 0%, 100%);
+  --sidebar-border: hsl(0, 0%, 20%);
+  --sidebar-ring: hsl(218, 86%, 37%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* TV-optimized focus styles */
+.focus-ring:focus {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+  transform: scale(1.02);
+}
+
+/* Smooth scrolling for carousels */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+.carousel-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Content card hover effects */
+.content-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Channel item focus effect */
+.channel-item:focus {
+  background-color: var(--samsung-blue);
+  transform: scale(1.02);
+}
+
+/* Video overlay gradient */
+.video-overlay {
+  background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+}
+
+/* Custom utilities */
+.text-samsung-blue {
+  color: var(--samsung-blue);
+}
+
+.text-accent-orange {
+  color: var(--accent-orange);
+}
+
+.text-success-green {
+  color: var(--success-green);
+}
+
+.bg-samsung-blue {
+  background-color: var(--samsung-blue);
+}
+
+.bg-accent-orange {
+  background-color: var(--accent-orange);
+}
+
+.bg-card-bg {
+  background-color: var(--card-bg);
+}
+
+.bg-success-green {
+  background-color: var(--success-green);
+}
+
+/* Large button styles for TV */
+.tv-button {
+  @apply px-8 py-4 text-lg font-bold rounded-lg transition-all duration-200;
+}
+
+.tv-button-primary {
+  @apply bg-white text-black hover:bg-gray-200;
+}
+
+.tv-button-secondary {
+  @apply bg-gray-800 bg-opacity-80 text-white hover:bg-gray-700;
+}
+
+/* Navigation item styles */
+.nav-item {
+  @apply flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200;
+}
+
+.nav-item-active {
+  @apply bg-samsung-blue text-white;
+}
+
+.nav-item-inactive {
+  @apply text-gray-300 hover:bg-gray-800;
+}
